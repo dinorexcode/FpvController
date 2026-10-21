@@ -1,0 +1,19 @@
+{
+  "name": "Nexus Gaming Hub",
+  "short_name": "Nexus",
+  "description": "Your games. Your people. Your next achievement.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0814",
+  "theme_color": "#0b0814",
+  "icons": [
+    {
+      "src": "./icons/nexus.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

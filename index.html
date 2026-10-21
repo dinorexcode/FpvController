@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0814">
+  <meta name="description" content="Nexus — your gaming universe.">
+  <title>Nexus — Your Gaming Universe</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/nexus.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" data-page="home" aria-label="Nexus home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-name">NEXUS<span class="brand-dot">.</span><small>GAMING HUB</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-page="home"><span class="nav-icon">⌂</span><span>Home</span><kbd>01</kbd></button>
+        <button class="nav-item" data-page="library"><span class="nav-icon">▦</span><span>Game Library</span><kbd>02</kbd></button>
+        <button class="nav-item" data-page="community"><span class="nav-icon">◎</span><span>Community</span><kbd>03</kbd></button>
+        <button class="nav-item" data-page="quests"><span class="nav-icon">✧</span><span>Daily Quests</span><kbd>04</kbd></button>
+        <button class="nav-item" data-page="profile"><span class="nav-icon">◉</span><span>Profile</span><kbd>05</kbd></button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="side-card">
+        <div class="side-card-top"><span class="live-dot"></span> NEXUS CORE <span class="tiny-tag">BETA</span></div>
+        <p>Your gaming world, connected.</p>
+        <div class="side-progress"><span></span></div>
+        <small><b id="side-level">LVL 01</b><span id="side-xp">0 / 500 XP</span></small>
+      </div>
+      <button class="user-mini" data-page="profile">
+        <div class="avatar avatar-me">N</div><span><b id="side-username">Nova</b><small>Rookie explorer</small></span><span class="more">···</span>
+      </button>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark small-mark"><span></span><span></span><span></span></span><b>NEXUS<span class="brand-dot">.</span></b></div>
+        <div class="crumb"><span>YOUR UNIVERSE</span><i>/</i><b id="crumb-page">OVERVIEW</b></div>
+        <div class="top-actions">
+          <div class="status-pill"><span class="live-dot"></span><span>ALL SYSTEMS READY</span></div>
+          <button class="icon-btn" id="install-btn" hidden title="Install Nexus">⇩</button>
+          <button class="icon-btn" id="quick-quest" title="Open daily quests">✧<span class="notification-dot"></span></button>
+          <button class="top-avatar" data-page="profile" title="Your profile">N</button>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="page active" id="page-home">
+          <div class="hero">
+            <div class="hero-copy">
+              <div class="eyebrow"><span class="eyebrow-line"></span> YOUR GAMING UNIVERSE</div>
+              <h1>Level up your<br><span>everyday.</span></h1>
+              <p>Your games. Your people. Your next achievement.<br class="desktop-break"> Everything starts here.</p>
+              <div class="hero-actions">
+                <button class="btn btn-primary" data-page="library">Explore library <span>↗</span></button>
+                <button class="btn btn-ghost" data-page="quests"><span class="sparkle">✧</span> Claim your daily XP</button>
+              </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+              <div class="core-glow"></div><div class="core-logo"><span></span><span></span><span></span></div>
+              <div class="orbit-label label-one"><span class="mini-dot"></span> PLAYER ONLINE</div>
+              <div class="orbit-label label-two">NEXUS / 001</div>
+              <div class="float-card"><span class="float-icon">✦</span><span><b>YOUR NEXT LEVEL</b><small>is one quest away</small></span></div>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div><div class="eyebrow">QUICK LOOK</div><h2>Your dashboard<span class="period">.</span></h2></div>
+            <span class="date-chip" id="today-label">TODAY</span>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span>GAMES IN LIBRARY</span><span class="stat-icon violet">▦</span></div><div class="stat-value" id="stat-games">04</div><div class="stat-foot"><span class="muted">Your personal collection</span><span class="stat-arrow">↗</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>TOTAL NEXUS XP</span><span class="stat-icon pink">✧</span></div><div class="stat-value" id="stat-xp">000</div><div class="stat-foot"><span class="muted">Keep your momentum</span><span class="stat-arrow">↗</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>DAY STREAK</span><span class="stat-icon orange">♨</span></div><div class="stat-value"><span id="stat-streak">01</span><small class="value-unit"> DAYS</small></div><div class="stat-foot"><span class="muted">Show up, level up</span><span class="streak-chip">✦ ACTIVE</span></div></article>
+          </div>
+
+          <div class="home-columns">
+            <section class="panel games-panel">
+              <div class="panel-heading"><div><div class="eyebrow">JUMP BACK IN</div><h3>Recently played</h3></div><button class="text-link" data-page="library">View library <span>→</span></button></div>
+              <div class="recent-list" id="recent-games"></div>
+            </section>
+            <section class="panel quest-panel">
+              <div class="panel-heading"><div><div class="eyebrow">DAILY OBJECTIVES</div><h3>Today's quests</h3></div><button class="round-link" data-page="quests">↗</button></div>
+              <div id="home-quests" class="home-quest-list"></div>
+              <button class="btn btn-wide btn-ghost" data-page="quests">View all quests <span>→</span></button>
+            </section>
+          </div>
+          <div class="bottom-note"><span class="note-star">✦</span><span><b>Small steps. Big sessions.</b> Your Nexus journey saves on this device.</span><span class="note-right">NEXUS CORE <b>● ONLINE</b></span></div>
+        </section>
+
+        <section class="page" id="page-library">
+          <div class="page-title-row"><div><div class="eyebrow">YOUR COLLECTION</div><h1>Game library<span class="period">.</span></h1><p class="page-subtitle">Every adventure has a home.</p></div><button class="btn btn-primary" id="add-game-open">＋ Add a game</button></div>
+          <div class="library-toolbar"><label class="search-box"><span>⌕</span><input id="game-search" type="search" placeholder="Search your games..." autocomplete="off"></label><div class="filter-group"><button class="filter active" data-filter="all">All games</button><button class="filter" data-filter="playing">Playing</button><button class="filter" data-filter="backlog">Backlog</button></div></div>
+          <div class="library-summary"><span><b id="library-count">4</b> TITLES IN YOUR UNIVERSE</span><span class="muted">Local collection <i class="live-dot"></i></span></div>
+          <div class="game-grid" id="game-grid"></div>
+          <div class="empty-state" id="library-empty" hidden><span>⌕</span><h3>No games found</h3><p>Try another search or add a game to your library.</p></div>
+          <div class="info-banner"><span class="info-symbol">ⓘ</span><span><b>About game launching</b><small>Nexus can open supported game links and Steam links. Browser security prevents a website from launching arbitrary .exe files directly.</small></span></div>
+        </section>
+
+        <section class="page" id="page-community">
+          <div class="page-title-row"><div><div class="eyebrow">PLAYER NETWORK</div><h1>Community<span class="period">.</span></h1><p class="page-subtitle">Good games are better together.</p></div><div class="network-badge"><span class="live-dot"></span> LOCAL PREVIEW</div></div>
+          <div class="community-hero panel"><div><div class="eyebrow">THE NEXUS NETWORK</div><h2>Find your next<br><span>party.</span></h2><p>Keep your people close and your next session closer. Social features are being built — this preview uses sample players.</p><button class="btn btn-primary" data-page="profile">Set up your profile <span>↗</span></button></div><div class="community-orb"><div class="orb-ring"></div><div class="orb-ring ring-two"></div><div class="orb-center">N</div><span class="orb-person p1">K</span><span class="orb-person p2">M</span><span class="orb-person p3">R</span><span class="orb-person p4">J</span></div></div>
+          <div class="community-columns"><section class="panel"><div class="panel-heading"><div><div class="eyebrow">AROUND THE HUB</div><h3>Player activity</h3></div><span class="tiny-tag">DEMO FEED</span></div><div class="feed" id="activity-feed"></div></section><section class="panel"><div class="panel-heading"><div><div class="eyebrow">YOUR SQUAD</div><h3>Suggested players</h3></div></div><div class="player-list" id="player-list"></div><p class="small-disclaimer">Sample profiles only. Accounts and live multiplayer social features are not connected in this MVP.</p></section></div>
+        </section>
+
+        <section class="page" id="page-quests">
+          <div class="page-title-row"><div><div class="eyebrow">DAILY PROGRESSION</div><h1>Daily quests<span class="period">.</span></h1><p class="page-subtitle">A little progress goes a long way.</p></div><div class="streak-big"><span>♨</span><div><b id="quest-streak">1 day</b><small>YOUR STREAK</small></div></div></div>
+          <div class="quest-hero panel"><div><div class="eyebrow">TODAY'S MISSION</div><h2>Make today<br><span>count.</span></h2><p>Complete quests to earn Nexus XP and unlock your next level.</p><div class="quest-total"><b id="quest-earned">0</b><span> / 150 XP AVAILABLE TODAY</span></div><div class="large-progress"><span id="quest-progress"></span></div></div><div class="quest-emblem"><span>✧</span><small>DAILY<br>PROTOCOL</small></div></div>
+          <div class="section-heading quest-section-heading"><div><div class="eyebrow">YOUR OBJECTIVES</div><h2>Quest log<span class="period">.</span></h2></div><span class="date-chip" id="quest-date">TODAY</span></div>
+          <div class="quest-log" id="quest-log"></div>
+          <p class="small-disclaimer">Quest progress is saved locally on this device. Some objectives are completed by using Nexus; there is no game telemetry or account connection in this MVP.</p>
+        </section>
+
+        <section class="page" id="page-profile">
+          <div class="page-title-row"><div><div class="eyebrow">PLAYER IDENTITY</div><h1>Your profile<span class="period">.</span></h1><p class="page-subtitle">This is your corner of the universe.</p></div><span class="tiny-tag">LOCAL PROFILE</span></div>
+          <div class="profile-hero panel"><div class="profile-avatar" id="profile-avatar">N<span class="online-ring"></span></div><div class="profile-main"><div class="profile-rank"><span class="rank-gem">✦</span> NEXUS EXPLORER</div><h2 id="profile-name-heading">Nova</h2><p id="profile-bio-heading">Finding the next great adventure.</p><div class="profile-tags"><span>✧ <b id="profile-level">LEVEL 01</b></span><span>♨ <b id="profile-streak">1 DAY STREAK</b></span><span>▦ <b id="profile-game-count">4 GAMES</b></span></div></div><div class="profile-xp"><small>TOTAL XP</small><b id="profile-xp">000</b><div class="large-progress"><span id="profile-progress"></span></div><small id="profile-next">500 XP TO NEXT LEVEL</small></div></div>
+          <div class="profile-columns"><section class="panel settings-panel"><div class="panel-heading"><div><div class="eyebrow">MAKE IT YOURS</div><h3>Profile settings</h3></div></div><form id="profile-form"><label class="form-label">DISPLAY NAME<input id="display-name" maxlength="18" value="Nova" required placeholder="Your gamer name"></label><label class="form-label">YOUR BIO<textarea id="display-bio" maxlength="100" rows="3" placeholder="A line about you...">Finding the next great adventure.</textarea></label><label class="form-label">ACCENT COLOR<select id="accent-select"><option value="violet">Nexus Violet</option><option value="pink">Neon Orchid</option><option value="blue">Cyber Blue</option></select></label><button class="btn btn-primary" type="submit">Save profile <span>✓</span></button><p id="profile-saved" class="form-feedback" role="status"></p></form></section><section class="panel settings-panel"><div class="panel-heading"><div><div class="eyebrow">YOUR PROGRESS</div><h3>Lifetime stats</h3></div></div><div class="lifetime-stat"><span>Quests completed</span><b id="lifetime-quests">0</b></div><div class="lifetime-stat"><span>Games in library</span><b id="lifetime-games">4</b></div><div class="lifetime-stat"><span>Current level</span><b id="lifetime-level">01</b></div><div class="lifetime-stat"><span>XP earned</span><b id="lifetime-xp">000</b></div><div class="settings-divider"></div><button class="btn btn-ghost btn-wide" id="export-data">Export my Nexus data ↗</button><button class="btn btn-danger btn-wide" id="reset-data">Reset local data</button><p class="small-disclaimer">Your profile and progress live in this browser. Export a backup before resetting.</p></section></div>
+        </section>
+      </div>
+      <footer class="footer"><span>© 2026 NEXUS CORE</span><span>BUILT FOR YOUR NEXT LEVEL <b>✦</b></span><span>PREVIEW 0.1.0</span></footer>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-item active" data-page="home"><span>⌂</span><small>Home</small></button>
+    <button class="mobile-nav-item" data-page="library"><span>▦</span><small>Library</small></button>
+    <button class="mobile-nav-item" data-page="community"><span>◎</span><small>Social</small></button>
+    <button class="mobile-nav-item" data-page="quests"><span>✧</span><small>Quests</small></button>
+    <button class="mobile-nav-item" data-page="profile"><span>◉</span><small>Profile</small></button>
+  </nav>
+
+  <div class="modal-backdrop" id="game-modal" hidden>
+    <div class="modal panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-heading"><div><div class="eyebrow">EXPAND YOUR UNIVERSE</div><h2 id="modal-title">Add a game<span class="period">.</span></h2></div><button class="icon-btn" id="add-game-close" aria-label="Close">×</button></div>
+      <form id="add-game-form"><label class="form-label">GAME TITLE<input id="new-game-title" required maxlength="40" placeholder="e.g. Hades II"></label><label class="form-label">PLATFORM<select id="new-game-platform"><option>PC</option><option>PlayStation</option><option>Xbox</option><option>Nintendo Switch</option><option>Mobile</option><option>Other</option></select></label><label class="form-label">STATUS<select id="new-game-status"><option value="playing">Currently playing</option><option value="backlog">On my backlog</option></select></label><label class="form-label">GAME LINK <span class="muted">(optional)</span><input id="new-game-link" type="url" placeholder="https://store.steampowered.com/..."></label><button class="btn btn-primary btn-wide" type="submit">Add to library <span>＋</span></button></form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
